@@ -1,0 +1,197 @@
+<<!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mini-Project</title>
+
+        <!-- CSS External File Link -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Tailwind CSS CDN Link -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
+
+    <body>
+
+        <!-- Header -->
+        <header class="main-header">
+            <!-- Logo -->
+            <div class="logo"></div>
+ 
+            <!-- Navigation Menu -->
+            <nav class="flex">
+                <a class="border rounded p-2" href="#home-page">Home</a>
+                <a class="border rounded p-2" href="#About-Me-page">About Me</a>
+                <a class="border rounded p-2" href="#My-Hobby-page">My Hobby</a>
+                <a class="border rounded p-2" href="#Certificate-page">Certificate</a>
+                <a class="border rounded p-2" href="#Send-a-Message-page">Send a Message</a>
+            </nav>
+        </header>
+
+        <hr />
+
+        <!-- Main Content -->
+        <main>
+            <!-- Home Page -->
+            <section id="home-page" class="min-h-[500px] text-center">
+                <h2 class="text-xl font-bold" id="welcome-speech">Welcome to My Website</h2>
+                <p class="mt-2">im are glad to have you here. Explore about my self.</p>
+                <img class="jpeg mx-auto mt-4 w-70 h-90 rounded-full object-cover" src="IMG-20250927-WA0013.jpg" alt="Profile Picture">
+            </section>
+
+            <!-- Our Profile Page -->
+            <section id="About-Me-page" class="min-h-[500px] text-center">
+                <h2 class="text-xl font-bold">About Me</h2>
+                <p class="mt-2">My name is Ariel Ford Hastipardji. im a student at Wikrama Bogor Vocational High School.<br>
+                     My major are Software and Game Develompent, and right now im still learning about Software Develompent<br>
+                     because i want to be a Software Engineer & Game Developer in the future. <br>
+                     My dream is to make Games that can be enjoyed by many people around the world.<br>
+                     </p>
+            </section>
+
+            <!-- Portfolio Page -->
+            <section id="My-Hobby-page" class="min-h-[500px] text-center">
+                <h2 class="text-xl font-bold">My Hobbies</h2>
+                <p class="mt-2">
+                    I have several hobbies that I enjoy during my free time:
+                    <ul class="list-disc list-inside mt-2">
+                        <li>Playing Video Games: I love immersing myself in different virtual worlds and experiencing new adventures.</li>
+                        <li>Reading Books: I enjoy reading a variety of genres, from fiction to non-fiction, which helps me expand my knowledge and imagination.</li>
+                        <li>Coding: As a software development student, I find coding to be both a hobby and a passion. I enjoy creating small projects and learning new programming languages.</li>
+                        <li>Watching Movies: I like to unwind by watching movies, especially science fiction and action genres.</li>
+                    </ul>
+            </section>
+            <!-- Certificate Page -->
+            <section id="Certificate-page" class="min-h-[500px] text-center">
+                <h2 class="text-xl font-bold">My Certificate</h2>
+                <p class="mt-2">Here are some of my certificates:</p>
+                <ul class="list-disc list-inside mt-2">
+                 <img src="belajar dasar ai.png" alt="Certificate 1" class="mx-auto mb-4 w-80 h-60 object-cover"/>
+                    <img src="Manajemen proyek.png" alt="Certificate 2" class="mx-auto mb-4 w-80 h-60 object-cover"/>
+                    <img src="HAKI.png" alt="Certificate 3" class="mx-auto mb-4 w-80 h-60 object-cover"/>
+                    <center><p>and many more...</p></center>
+                </ul>
+                </li>
+
+            <!-- Send a Message Page -->
+         <section id="Send-a-Message-page" class="min-h-[500px] text-center">
+            <h2 class="text-xl font-bold">Get in Touch</h2>
+            <p class="mt-2">I would love to hear from you! you can send message if you want to!</p>
+
+        <div class="divider"></div>
+
+    <section class="message-area" aria-label="Send a Message section">
+      <form class="form-card" id="contactForm" onsubmit="return false" autocomplete="off" aria-labelledby="formTitle">
+        <h3 id="formTitle">send a message</h3>
+
+        <div class="form-row">
+          <label for="name">Nama :</label>
+          <input id="name" name="name" type="text" placeholder="Nama lengkap" required />
+        </div>
+
+        <div class="form-row">
+          <label for="dob">Tanggal Lahir</label>
+          <input id="dob" name="dob" type="date" />
+        </div>
+
+        <div class="form-row">
+          <label>Jenis Kelamin</label>
+          <div class="gender">
+            <label><input type="radio" name="gender" value="Laki-Laki" checked /> Laki-Laki</label>
+            <label><input type="radio" name="gender" value="Perempuan" /> Perempuan</label>
+          </div>
+        </div>
+
+        <div class="form-row" style="align-items:flex-start">
+          <label for="message">Pesan :</label>
+          <textarea id="message" name="message" placeholder="Tulis pesan..."></textarea>
+        </div>
+
+        <button class="btn-submit" id="submitBtn" type="button">Submit</button>
+      </form>
+
+      <aside class="preview" aria-live="polite" aria-atomic="true">
+        <div class="time" id="currentTime">Current time: ...</div>
+        <div><strong>Nama:</strong> <span id="pv-name">-</span></div>
+        <div><strong>Tanggal Lahir:</strong> <span id="pv-dob">-</span></div>
+        <div><strong>Jenis Kelamin:</strong> <span id="pv-gender">-</span></div>
+        <div class="line"><strong>Pesan:</strong>
+          <div id="pv-message" style="white-space:pre-wrap;margin-top:6px; color:#222">-</div>
+        </div>
+      </aside>
+    </section>
+
+    <script>
+  // Ambil semua elemen form
+  const nameInput = document.getElementById('name');
+  const dobInput = document.getElementById('dob');
+  const messageInput = document.getElementById('message');
+  const submitBtn = document.getElementById('submitBtn');
+
+  // Elemen untuk preview hasil
+  const pvName = document.getElementById('pv-name');
+  const pvDob = document.getElementById('pv-dob');
+  const pvGender = document.getElementById('pv-gender');
+  const pvMessage = document.getElementById('pv-message');
+  const timeDisplay = document.getElementById('currentTime');
+
+  // Fungsi update waktu real-time
+  function updateTime() {
+    const now = new Date();
+    timeDisplay.textContent = 'Current time : ' + now.toString();
+  }
+  updateTime();
+  setInterval(updateTime, 1000);
+
+  // Fungsi ambil jenis kelamin
+  function getGender() {
+    const radios = document.getElementsByName('gender');
+    for (let r of radios) {
+      if (r.checked) return r.value;
+    }
+    return '-';
+  }
+
+  // Event klik tombol Submit
+  submitBtn.addEventListener('click', function() {
+    const name = nameInput.value.trim();
+    const dob = dobInput.value;
+    const gender = getGender();
+    const message = messageInput.value.trim();
+
+    // Validasi sederhana
+    if (!name) {
+      alert('Nama harus diisi!');
+      nameInput.focus();
+      return;
+    }
+
+    // Tampilkan hasil di sisi kanan
+    pvName.textContent = name;
+    pvDob.textContent = dob ? new Date(dob).toLocaleDateString() : '-';
+    pvGender.textContent = gender;
+    pvMessage.textContent = message || '-';
+
+    // Efek animasi kecil saat submit
+    submitBtn.textContent = 'Terkirim ✓';
+    setTimeout(() => submitBtn.textContent = 'Submit', 1500);
+  });
+</script>
+
+    </main>
+
+    <hr />
+
+    <!-- Footer -->
+    <footer>
+        <p class="text-center p-4">© 2025 My Website. All rights reserved.</p>
+    </footer>
+
+    <!-- JS External File Link -->
+    <script src="js/script.js"></script>
+
+    </body>
+
+    </html> 
